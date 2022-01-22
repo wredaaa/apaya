@@ -267,3 +267,106 @@ body {
 .footer-menu-active {
   color: #2DBE60 !important;
 }
+
+.banner-profile {
+  text-align-last: center;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.box-space {
+  padding-left: 25px; 
+  padding-right: 25px;
+}
+
+.menu-back p {
+  text-align-last: left;
+  font-size: 17px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.title-reward {
+  color: #425766;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.background-reward {
+  background: #F5F5F7;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.reward-active {
+  background: #00B242 !important;
+  box-shadow: 0px 4px 4px rgb(213 213 213 / 30%);
+}
+
+.subtitle-reward {
+  font-size: 17px;
+  color:#425766;
+}
+
+.desc-reward {
+  font-size: 14px;
+  color:#425766;
+}
+
+.desc-reward-active {
+  color:#fff;
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: #768C9E;
+  padding-left: 0;
+}
+
+#progressbar .active {
+  color: #425766
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 10px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 700 !important;
+    margin-bottom: 0;
+    text-align-last: center;
+}
+
+#progressbar li:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding-left: 10px;
+  position: inherit;
+  z-index: 1;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #14A2FF
+}

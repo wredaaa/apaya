@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+  <style>
+    .title-login {
+      color: #222222;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .desc-login {
+      font-size: 14px;
+      color: #425766;
+      margin-bottom: 40px;
+    }
+
+    .label-input {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    ::placeholder {
+      font-size: 14px;
+      color: #9E9E9E;
+    }
+
+    .field-icon {
+      float: right;
+      margin-right: 5px;
+      margin-top: -29px;
+      position: relative;
+      z-index: 2;
+      font-size: 21px;
+    }
+
+    .lupa-password {
+      font-size: 14px;
+      color: #00912D;
+      float: right;
+    }
+
+    .card-btn-signin {
+      margin-top: 300px;
+      text-align: center;
+      display: grid;
+    }
+
+    .btn-signin {
+      background: #2DBE60;
+      box-shadow: 0px 6px 6px rgb(213 213 213 / 40%);
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .btn-new {
+      color: #2DBE60;
+      margin-top: 15px;
+      font-size: 17px;
+    }
+
+  </style>
+
+  <div class="frame-size">
+    <div class="banner-profile">
+      <div class="row box-space" style="margin-bottom: 15px;">
+        <div class="col-1 col-md-1 menu-back" style="text-align-last: right; padding-left: 0;">
+          <img width="8" src="{{ url_for('static', filename='images/master_cuan/chevron_left.png') }}">
+        </div>
+        <div class="col-6 col-md-6 menu-back" style="padding-left: 0px;">
+          <p style="margin-top: 2px;">Login</p>
+        </div>
+      </div>
+    </div>
+    <div class="banner-body">
+      <!-- Form Login -->
+      <section> 
+        <div class="mt-6">
+          <p class="title-login">Login dengan akun LandX</p>
+          <p class="desc-login">
+            Kamu bisa login menggunakan akun yang telah kamu daftarkan melalui aplikasi LandX
+          </p>    
+          <div class="">
+            <div class="mb-3">
+              <label for="email" class="form-label label-input">Email</label>
+              <input type="email" class="form-control form-login" id="email" name="email" placeholder="Masukkan email Anda">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label label-input">Kata Sandi</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi Anda">
+              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+          </div>
+          <p class="lupa-password">Lupa Kata Sandi?</p>
+        </div>
+        <div class="col-12 col-md-12 card-btn-signin">
+          <button class="btn btn-signin">Masuk Sekarang</button>
+          <button class="btn btn-new">Daftar Akun Baru</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+{% endblock content %}
