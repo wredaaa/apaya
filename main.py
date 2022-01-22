@@ -15,5 +15,9 @@ def home():
 def about():
   return render_template('profile.html')
 
+@app.route("/project_detail")
+def detail():
+  return render_template('detail_project.html')
+
 if __name__ == '__main__':
   app.run(debug=True, port=5001) 
