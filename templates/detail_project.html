@@ -39,8 +39,7 @@
       float: right;
     }
 
-    .card-btn-signin {
-      margin-top: 300px;
+    .card-btn-buy {
       text-align: center;
       display: grid;
     }
@@ -56,14 +55,75 @@
       color: #fff !important;
     }
 
-    .btn-new {
+    .btn-prospektus {
       color: #2DBE60;
       margin-top: 15px;
       font-size: 17px;
+      outline: auto;
+      margin-bottom: 15px;
     }
 
-    .btn-new:hover  {
+    .btn-prospektus:hover  {
       color: #2DBE60 !important;
+    }
+
+    .carousel-indicators {
+      margin-bottom: 10px;
+      margin-left: 10px;
+      justify-content: unset;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      height: 8px;
+      width: 8px;
+      background-color: #D5D5D5;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .carousel-indicators .active {
+      background-color: #2DBE60;
+      /* border-radius: 25px;
+      height: 8px;
+      width: 15px; */
+    }
+    
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      border-color: #fff;
+      color: #2DBE60;
+    }
+
+    .nav-link {
+      color: #9E9E9E;
+    }
+
+    .nav-tabs .nav-link, .nav-tabs {
+      border-bottom: transparent;
+      border: transparent;
+      font-size: 14px;
+    }
+
+    .nav-link:focus, .nav-link:hover {
+      color: #9E9E9E;
+    }
+
+    .detail-code-text {
+      color: #2DBE60;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    .detail-font-17 {
+      font-size: 17px;
+    }
+
+    .detail-weight-17 {
+      font-weight: 700;
+    }
+
+    .progress-bar-detail {
+      height: 8px !important;
     }
 
   </style>
@@ -75,34 +135,117 @@
           <img width="8" src="{{ url_for('static', filename='images/master_cuan/chevron_left.png') }}">
         </div>
         <div class="col-6 col-md-6 menu-back" style="padding-left: 0px;">
-          <p style="margin-top: 2px;">Login</p>
+          <p style="margin-top: 2px;">Detail Project</p>
         </div>
       </div>
-    </div>
-    <div class="banner-body">
-      <!-- Form Login -->
-      <section> 
-        <div class="mt-6">
-          <p class="title-login">Login dengan akun LandX</p>
-          <p class="desc-login">
-            Kamu bisa login menggunakan akun yang telah kamu daftarkan melalui aplikasi LandX
-          </p>    
-          <div class="">
-            <div class="mb-3">
-              <label for="email" class="form-label label-input">Email</label>
-              <input type="email" class="form-control form-login" id="email" name="email" placeholder="Masukkan email Anda">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label label-input">Kata Sandi</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi Anda">
-              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-            </div>
-          </div>
-          <p class="lupa-password">Lupa Kata Sandi?</p>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="col-12 col-md-12 card-btn-signin">
-          <button class="btn-signin">Masuk Sekarang</button>
-          <button class="btn-new">Daftar Akun Baru</button>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/BV_Certification_ISO27001.png') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images//BV_Certification_ISO27001.png') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images//BV_Certification_ISO27001.png') }}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+
+      <nav class="mt-3">
+        <div class="nav nav-tabs scrollmenu" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Info Proyek</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Deskripsi Bisnis</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Lokasi</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Kalkulator Investasi</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+          <div class="card" style="border:none;">
+            <div class="card-body" style="padding: 15px; text-align-last: left;">
+              <div class="row">
+                <div class="col-9 col-md-9">
+                  <p class="detail-code-text">CAPT</p>
+                </div>
+                <div class="col-3 col-md-3" style="padding-left: 0;text-align-last: center;">
+                  <p class="code-text chip-category text-center">MARITIM</p>
+                </div>
+              </div>
+              <p class="title-project detail-font-17">Kapal Tug & Barge</p>
+              <p class="card-title title-company detail-font-17">PT Samudera Rezeki</p>
+              
+              <div class="row">
+                <div class="col-9 col-md-9">
+                  <p class="card-title detail-font-17 detail-weight-17 mb-0"><span>Rp</span> 9.999.999.999</p>
+                </div>
+                <div class="col-3 col-md-3" style="padding-left: 0;">
+                  <p class="card-title detail-font-17 detail-weight-17 mb-0">00</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-9 col-md-9">
+                  <p class="card-title title-company">dari Rp 0.000.000.000 Total Pendanaan</p>
+                </div>
+                <div class="col-3 col-md-3" style="padding-left: 0;">
+                  <p class="card-title title-company">Sisa Hari</p>
+                </div>
+              </div>
+              <div class="progress progress-bar-detail">
+                <div class="progress-bar" style="background-color: #2DBE60; width: 20%" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-7 col-md-7">
+                  <p class="card-title detail-lot">Harga per Lot</p>
+                </div>
+                <div class="col-5 col-md-5" style="padding-left: 0;">
+                  <p class="card-title detail-lot">Jumlah Lot</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-7 col-md-7">
+                  <p class="card-title detail-font-17 detail-weight-17 mb-0"><span>Rp</span>1.000.000</p>
+                </div>
+                <div class="col-5 col-md-5" style="padding-left: 0;">
+                  <p class="card-title detail-font-17 detail-weight-17 mb-0">00</p>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-7 col-md-7">
+                  <p class="card-title detail-lot">Periode Dividen</p>
+                </div>
+                <div class="col-5 col-md-5" style="padding-left: 0;">
+                  <p class="card-title detail-lot">Estimasi Dividen</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-7 col-md-7">
+                  <p class="card-title detail-font-17 detail-weight-17 mb-0">Periode</p>
+                </div>
+                <div class="col-5 col-md-5" style="padding-left: 0;">
+                  <p class="card-title text-detail-lot detail-weight-17 mb-0">0,0 - 0,0% per 3 Bulan</p>
+                </div>
+              </div>              
+            </div>
+          </div>   
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+      </div>
+    </div>
+    <div style="background-color: #fff; padding: 15px;">
+      <!-- Detail Project -->
+      <section> 
+        <div class="col-12 col-md-12 card-btn-buy">
+          <button class="btn btn-prospektus">Download Prospektus</button>
+          <button class="btn btn-signin">Beli</button>
         </div>
       </section>
     </div>
