@@ -126,6 +126,48 @@
       height: 8px !important;
     }
 
+    .title-proyek {
+      height: 45px;
+    }
+
+    .title-bisnis p {
+      font-size: 20px;
+      font-weight: 700;
+      color: #425766;
+      text-align-last: left;
+    }
+
+    .desc-bisnis p {
+      font-size: 14px;
+      text-align-last: left;
+      color: #425766;
+    }
+
+    .title-location {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 15px;
+      text-align-last: left; 
+    }
+
+    .desc-location {
+      font-size: 14px;
+      text-align-last: left;
+      color: #425766;
+    }
+
+    .border-kalku {
+      border: 1px solid #E5E5E5;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .icon-info {
+      font-size: 21px;
+      color: #000000;
+    }
+
+
   </style>
 
   <div class="frame-size">
@@ -160,10 +202,10 @@
 
       <nav class="mt-3">
         <div class="nav nav-tabs scrollmenu" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Info Proyek</button>
-          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Deskripsi Bisnis</button>
-          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Lokasi</button>
-          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Kalkulator Investasi</button>
+          <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true">Info Proyek</button>
+          <button class="nav-link" id="nav-desc-bisnis-tab" data-bs-toggle="tab" data-bs-target="#nav-desc-bisnis" type="button" role="tab" aria-controls="nav-desc-bisnis" aria-selected="false">Deskripsi Bisnis</button>
+          <button class="nav-link" id="nav-location-tab" data-bs-toggle="tab" data-bs-target="#nav-location" type="button" role="tab" aria-controls="nav-location" aria-selected="false">Lokasi</button>
+          <button class="nav-link" id="nav-kalkulator-tab" data-bs-toggle="tab" data-bs-target="#nav-kalkulator" type="button" role="tab" aria-controls="nav-kalkulator" aria-selected="false">Kalkulator Investasi</button>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -178,7 +220,7 @@
                   <p class="code-text chip-category text-center">MARITIM</p>
                 </div>
               </div>
-              <p class="title-project detail-font-17">Kapal Tug & Barge</p>
+              <p class="title-project detail-font-17 title-proyek">Kapal Tug & Barge</p>
               <p class="card-title title-company detail-font-17">PT Samudera Rezeki</p>
               
               <div class="row">
@@ -234,21 +276,99 @@
                 </div>
               </div>              
             </div>
+          </div>
+          <div class="col-12 col-md-12 p-3 card-btn-buy pb-0">
+            <button class="btn btn-prospektus">Download Prospektus</button>
           </div>   
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        <div class="tab-pane fade p-3" id="nav-desc-bisnis" role="tabpanel" aria-labelledby="nav-desc-bisnis-tab">
+          <div class="col-12 col-md-12 title-bisnis">
+            <p>Title Goes Here</p>
+          </div>
+          <div class="col-12 col-md-12 desc-bisnis">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          </div>
+        </div>
+        <div class="tab-pane fade p-3" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
+          {% for i in range(0, 4) %}
+          <div>
+            <img width="325" src="{{ url_for('static', filename='images/master_cuan/maps.png') }}">
+            <p class="title-location">Lokasi Bisnis</p>
+            <p class="desc-location mb-0">Jl. Manggis 2 No. 2A, Kel.
+              Tanjung Duren Utara, Kec. Grogol
+              Petamburan, Jakarta 11470</p>
+              <div class="col-12 col-md-12 card-btn-buy mb-3">
+                <a href="" class="btn btn-prospektus">Buka Google Maps</a>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="tab-pane fade p-3" id="nav-kalkulator" role="tabpanel" aria-labelledby="nav-kalkulator-tab" style="text-align-last: left;">
+          <div class="row">
+            <div class="col-7 col-md-7">
+              <p class="card-title detail-lot">Harga per Lot</p>
+            </div>
+            <div class="col-5 col-md-5" style="padding-left: 0;">
+              <p class="card-title detail-lot">Estimasi Dividen</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7 col-md-7">
+              <p class="card-title detail-font-17 detail-weight-17 mb-0"><span>Rp</span>1.000.000</p>
+            </div>
+            <div class="col-5 col-md-5" style="padding-left: 0;">
+              <p class="card-title text-detail-lot detail-weight-17 mb-0">0,0 - 0,0% per 3 Bulan</p>
+            </div>
+          </div>
+          <hr/>
+          <div class="border-kalku">
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-lot">Total Investasi</p>
+            </div>
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-font-17 detail-weight-17 mb-0"><span>Rp</span>1.000.000</p>
+            </div>
+          </div>
+          <div class="border-kalku mt-3">
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-lot">Keuntungan per tahun berdasarkan data historis</p>
+            </div>
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-font-17 detail-weight-17 mb-0">Rp 00.000 - Rp 00.000</p>
+            </div>
+          </div>
+          <div class="border-kalku mt-3">
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-lot">Perkiraan dividen yield per tahun berdasarkan
+                data historis</p>
+            </div>
+            <div class="col-12 col-md-12">
+              <p class="card-title detail-font-17 detail-weight-17 mb-0">00% - 00%</p>
+            </div>
+          </div>
+          <div class="row border-kalku mt-3 mx-0" style="border: 1px solid #CEE6F4;">
+            <div class="col-2 col-md-2">
+              <p class="card-title icon-info mb-0">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div class="col-10 col-md-10">
+              <p class="card-title detail-font-17 mb-0" style="font-size: 10px;">Kinerja masa lalu bukan merupakan indikasi kinerja masa depan.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div style="background-color: #fff; padding: 15px;">
-      <!-- Detail Project -->
-      <section> 
+      <div style="background-color: #fff;" class="p-3 pt-0">
         <div class="col-12 col-md-12 card-btn-buy">
-          <button class="btn btn-prospektus">Download Prospektus</button>
           <button class="btn btn-signin">Beli</button>
         </div>
-      </section>
+      </div>
     </div>
+    
   </div>
 
 {% endblock content %}
