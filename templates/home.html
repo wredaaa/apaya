@@ -1,182 +1,364 @@
 {% extends "layout.html" %}
 {% block content %}
 
-  <div class="frame-size">
-    <div class="banner-container">
-      <img src="{{ url_for('static', filename='images/master_cuan/logo_white.webp') }}">
-      <img src="{{ url_for('static', filename='images/master_cuan/banner_master_cuan.webp') }}">
-    </div>
-    <div class="banner-move">
-      <div class="row box-space">
-        <div class="col-8 col-md-8 text-name">
-          <p>Hai, Wreda Prasetiyo W</p>
-        </div>
-        <div class="col-4 col-md-4 text-lot">
-          <p>Total Lot : 0</p>
-        </div>
-      </div>
-      <div class="row box-space">
-        <div class="col-3 col-md-3">
-          <p class="emoji">&#128578;</p>
-        </div>
-        <div class="col-9 col-md-9" style="text-align-last: left;">
-          <p class="total-lot">0 Lot</p>
-          <p class="total-lot-desc">20 Lot ke level berikutnya</p>
-          <div class="progress progress-bar-lot">
-            <div class="progress-bar" style="width: 20%" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="banner-body">
-      <section> <!-- Project Card -->
-        <div style="margin-top: 90px;">
-          <p class="title-funding">Pendanaan Dibuka</p>    
-        </div>
-
-        <div class="row row-cols-2 row-cols-md-2 g-4">
-          {% for i in range(0, 4) %}
-            <div class="col">
-              <a class="project-link" href="/project-detail">
-                <div class="card card-add">
-                  <div style="position: relative;">
-                    <img src="https://thumbor.landx.id/unsafe/180x90/https://landx.id/images/CAPT/1.webp" class="card-img-top" alt="broken image" height="82">
-                    <div class="chip-card">
-                      <p class="chip-card-text">15 hari lagi</p>
-                    </div>
-                  </div>
-                  <div class="card-body" style="padding: 12px;">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <p class="code-text">CAPT</p>
-                      </div>
-                      <div class="col-md-7" style="padding-left: 0;">
-                        <p class="code-text chip-category text-center">MARITIM</p>
-                      </div>
-                    </div>
-                    <p class="title-project">Kapal Tug & Barge</p>
-                    <p class="card-title title-company">PT Samudera Rezeki</p>
-                    <p class="card-title text-funding"><span>Rp</span> 9.999.999.999</p>
-                    <div class="progress progress-bar-funding">
-                      <div class="progress-bar" style="background-color: #2DBE60; width: 20%" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-title detail-lot">Harga per Lot</p>
-                    <p class="card-title text-detail-lot"><span>Rp</span>1.000.000</p>
-                    <p class="card-title detail-lot">Riwayat Dividen</p>
-                    <p class="card-title text-detail-lot mb-0">0,0 - 0,0% per 3 Bulan</p>
-                  </div>
-                </div>    
-              </a>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-      <section> <!-- CTA -->
-        <div class="card-cta">
-          <div class="row">
-            <div class="col-3 col-md-3">
-              <img class="img-back" src="{{ url_for('static', filename='images/master_cuan/mini-logo.webp') }}">
-            </div>
-            <div class="col-9 col-md-9">
-              <p class="title-cta">Download Aplikasi LandX</p>
-              <p class="desc-cta">Kini memiliki bisnis dan properti jadi jauh lebih mudah. Unduh aplikasi LandX sekarang</p>
-            </div>
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-cta">Install Sekarang</button>
-          </div>
-        </div>
-
-        <p class="text-cs">Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</p>
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-cs">
-            <span>
-              <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
-            </span> 
-            WA Customer Service 1
-          </button>
-          <button type="button" class="btn btn-cs">
-            <span>
-              <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
-            </span> 
-            WA Customer Service 2
-          </button>
-        </div>
-      </section> 
-    </div>
-    <!-- Footer TODO: move to layout -->
-    <footer style="background-color: #fff;">
-      <div class="footer-cuan">
-        <div class="menu-link pt-4">
-          <div class="col-md-12 mb-2">
-            <a href="">Mengapa LandX</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Proyek</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Cara Kerja</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Blog</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Perusahaan</a>
-          </div>
-        </div>
-        <div class="menu-link2">
-          <div class="col-md-12 mb-2">
-            <a href="">Karir</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Syarat & Ketentuan</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Kebijakan Privasi</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Service Level Agreement</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Kebijakan ISMS</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">Mitigasi Resiko</a>
-          </div>
-          <div class="col-md-12 mb-2">
-            <a href="">FAQ</a>
-          </div>
-        </div>
-        <div class="mt-4">
-          <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
-          <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
-          <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
-        </div>
-        <div class="mt-4">
-          <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
-        </div>
-      </div>
-      <div class="row text-center pt-3 pb-3 footer-menu">
-        <div class="col-4 col-md-4">
-          <a href="">
-            <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
-            <p class="footer-menu-active">Home</p>
-          </a>
-        </div>
-        <div class="col-4 col-md-4">
-          <a href="">
-            <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-            <p>Cara Kerja</p>
-          </a>
-        </div>
-        <div class="col-4 col-md-4">
-          <a href="/profile">
-            <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
-            <p>Profile</p>
-          </a>
-        </div>
-      </div>
-    </footer>
+<div class="frame-size">
+  <div class="banner-container">
+    <img src="{{ url_for('static', filename='images/master_cuan/logo_white.webp') }}">
+    <img src="{{ url_for('static', filename='images/master_cuan/banner_master_cuan.webp') }}">
   </div>
+  <div class="banner-move">
+    <div class="row box-space">
+      <div class="col-8 col-md-8 text-name">
+        <p>Hai, Wreda Prasetiyo W</p>
+      </div>
+      <div class="col-4 col-md-4 text-lot">
+        <p>Total Lot : 0</p>
+      </div>
+    </div>
+    <div class="row box-space">
+      <div class="col-3 col-md-3">
+        <p class="emoji">&#128578;</p>
+      </div>
+      <div class="col-9 col-md-9" style="text-align-last: left;">
+        <p class="total-lot">0 Lot</p>
+        <p class="total-lot-desc">20 Lot ke level berikutnya</p>
+        <div class="progress progress-bar-lot">
+          <div class="progress-bar" style="width: 20%" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner-body">
+    <section>
+      <!-- Project Card -->
+      <div style="margin-top: 90px;">
+        <p class="title-funding">Pendanaan Dibuka</p>
+      </div>
+
+      <div class="row row-cols-2 row-cols-md-2 g-4">
+        {% for i in range(0, 4) %}
+        <div class="col">
+          <a class="project-link" href="/project-detail">
+            <div class="card card-add">
+              <div style="position: relative;">
+                <img src="https://thumbor.landx.id/unsafe/180x90/https://landx.id/images/CAPT/1.webp"
+                  class="card-img-top" alt="broken image" height="82">
+                <div class="chip-card">
+                  <p class="chip-card-text">15 hari lagi</p>
+                </div>
+              </div>
+              <div class="card-body" style="padding: 12px;">
+                <div class="row">
+                  <div class="col-md-5">
+                    <p class="code-text">CAPT</p>
+                  </div>
+                  <div class="col-md-7" style="padding-left: 0;">
+                    <p class="code-text chip-category text-center">MARITIM</p>
+                  </div>
+                </div>
+                <p class="title-project">Kapal Tug & Barge</p>
+                <p class="card-title title-company">PT Samudera Rezeki</p>
+                <p class="card-title text-funding"><span>Rp</span> 9.999.999.999</p>
+                <div class="progress progress-bar-funding">
+                  <div class="progress-bar" style="background-color: #2DBE60; width: 20%" role="progressbar"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-title detail-lot">Harga per Lot</p>
+                <p class="card-title text-detail-lot"><span>Rp</span>1.000.000</p>
+                <p class="card-title detail-lot">Riwayat Dividen</p>
+                <p class="card-title text-detail-lot mb-0">0,0 - 0,0% per 3 Bulan</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <!-- CTA -->
+      <div class="card-cta">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            <img class="img-back" src="{{ url_for('static', filename='images/master_cuan/mini-logo.webp') }}">
+          </div>
+          <div class="col-9 col-md-9">
+            <p class="title-cta">Download Aplikasi LandX</p>
+            <p class="desc-cta">Kini memiliki bisnis dan properti jadi jauh lebih mudah. Unduh aplikasi LandX sekarang
+            </p>
+          </div>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-cta">Install Sekarang</button>
+        </div>
+      </div>
+
+      <p class="text-cs">Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</p>
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-cs">
+          <span>
+            <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+          </span>
+          WA Customer Service 1
+        </button>
+        <button type="button" class="btn btn-cs">
+          <span>
+            <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+          </span>
+          WA Customer Service 2
+        </button>
+      </div>
+    </section>
+  </div>
+  <!-- Footer TODO: move to layout -->
+  <footer style="background-color: #fff;">
+    <div class="footer-cuan">
+      <div class="menu-link pt-4">
+        <div class="col-md-12 mb-2">
+          <a href="">Mengapa LandX</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Proyek</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Cara Kerja</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Blog</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Perusahaan</a>
+        </div>
+      </div>
+      <div class="menu-link2">
+        <div class="col-md-12 mb-2">
+          <a href="">Karir</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Syarat & Ketentuan</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Kebijakan Privasi</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Service Level Agreement</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Kebijakan ISMS</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Mitigasi Resiko</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">FAQ</a>
+        </div>
+      </div>
+      <div class="mt-4">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
+      </div>
+      <div class="mt-4">
+        <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
+      </div>
+    </div>
+    <div class="row text-center pt-3 pb-3 footer-menu">
+      <div class="col-4 col-md-4">
+        <a href="">
+          <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
+          <p class="footer-menu-active">Home</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-4">
+        <a href="">
+          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+          <p>Cara Kerja</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-4">
+        <a href="/profile">
+          <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+          <p>Profile</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="banner-move">
+  <div class="row box-space">
+    <div class="col-8 col-md-8 text-name">
+      <p>Hai, Wreda Prasetiyo W</p>
+    </div>
+    <div class="col-4 col-md-4 text-lot">
+      <p>Total Lot : 0</p>
+    </div>
+  </div>
+  <div class="row box-space">
+    <div class="col-3 col-md-3">
+      <p class="emoji">&#128578;</p>
+    </div>
+    <div class="col-9 col-md-9" style="text-align-last: left;">
+      <p class="total-lot">0 Lot</p>
+      <p class="total-lot-desc">20 Lot ke level berikutnya</p>
+      <div class="progress progress-bar-lot">
+        <div class="progress-bar" style="width: 20%" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="banner-body">
+  <section>
+    <!-- Project Card -->
+    <div style="margin-top: 90px;">
+      <p class="title-funding">Pendanaan Dibuka</p>
+    </div>
+
+    <div class="row row-cols-2 row-cols-md-2 g-4">
+      {% for i in range(0, 4) %}
+      <div class="col">
+        <a class="project-link" href="/detail-project">
+          <div class="card card-add">
+            <div style="position: relative;">
+              <img src="https://thumbor.landx.id/unsafe/180x90/https://landx.id/images/CAPT/1.webp" class="card-img-top"
+                alt="broken image" height="82">
+              <div class="chip-card">
+                <p class="chip-card-text">15 hari lagi</p>
+              </div>
+            </div>
+            <div class="card-body" style="padding: 12px;">
+              <div class="row">
+                <div class="col-md-5">
+                  <p class="code-text">CAPT</p>
+                </div>
+                <div class="col-md-7" style="padding-left: 0;">
+                  <p class="code-text chip-category text-center">MARITIM</p>
+                </div>
+              </div>
+              <p class="title-project">Kapal Tug & Barge</p>
+              <p class="card-title title-company">PT Samudera Rezeki</p>
+              <p class="card-title text-funding"><span>Rp</span> 9.999.999.999</p>
+              <div class="progress progress-bar-funding">
+                <div class="progress-bar" style="background-color: #2DBE60; width: 20%" role="progressbar"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="card-title detail-lot">Harga per Lot</p>
+              <p class="card-title text-detail-lot"><span>Rp</span>1.000.000</p>
+              <p class="card-title detail-lot">Riwayat Dividen</p>
+              <p class="card-title text-detail-lot mb-0">0,0 - 0,0% per 3 Bulan</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <section>
+    <!-- CTA -->
+    <div class="card-cta">
+      <div class="row">
+        <div class="col-3 col-md-3">
+          <img class="img-back" src="{{ url_for('static', filename='images/master_cuan/mini-logo.webp') }}">
+        </div>
+        <div class="col-9 col-md-9">
+          <p class="title-cta">Download Aplikasi LandX</p>
+          <p class="desc-cta">Kini memiliki bisnis dan properti jadi jauh lebih mudah. Unduh aplikasi LandX sekarang
+          </p>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-cta">Install Sekarang</button>
+      </div>
+    </div>
+
+    <p class="text-cs">Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</p>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-cs">
+        <span>
+          <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+        </span>
+        WA Customer Service 1
+      </button>
+      <button type="button" class="btn btn-cs">
+        <span>
+          <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+        </span>
+        WA Customer Service 2
+      </button>
+    </div>
+  </section>
+</div>
+<!-- Footer TODO: move to layout -->
+<footer style="background-color: #fff;">
+  <div class="footer-cuan">
+    <div class="menu-link pt-4">
+      <div class="col-md-12 mb-2">
+        <a href="">Mengapa LandX</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Proyek</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="/cara-kerja">Cara Kerja</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Blog</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Perusahaan</a>
+      </div>
+    </div>
+    <div class="menu-link2">
+      <div class="col-md-12 mb-2">
+        <a href="">Karir</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Syarat & Ketentuan</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Kebijakan Privasi</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Service Level Agreement</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Kebijakan ISMS</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">Mitigasi Resiko</a>
+      </div>
+      <div class="col-md-12 mb-2">
+        <a href="">FAQ</a>
+      </div>
+    </div>
+    <div class="mt-4">
+      <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
+      <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
+      <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
+    </div>
+    <div class="mt-4">
+      <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
+    </div>
+  </div>
+  <div class="row text-center pt-3 pb-3 footer-menu">
+    <div class="col-4 col-md-4">
+      <a href="">
+        <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
+        <p class="footer-menu-active">Home</p>
+      </a>
+    </div>
+    <div class="col-4 col-md-4">
+      <a href="/cara-kerja">
+        <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+        <p>Cara Kerja</p>
+      </a>
+    </div>
+    <div class="col-4 col-md-4">
+      <a href="/profile">
+        <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+        <p>Profile</p>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
 
 {% endblock content %}

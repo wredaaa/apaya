@@ -1,0 +1,784 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  .container-how-work {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-sm {
+    max-width: 470px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .container-how-work .container-banner-img {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container-download {
+    background: radial-gradient(87.04% 133.41% at 9.6% 0%, #6AE755 0%, #1BA503 57.46%);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .container-mini-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-footer {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ECFBEA 100%);
+  }
+
+  .container-text-reward {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(213, 213, 213, 0.3);
+    height: 200px;
+    border-radius: 8px;
+    padding: 24px 32px;
+  }
+
+  .container-icon {
+    width: 56px;
+    height: 56px;
+    background: #E4F6E8;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px
+  }
+
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-title {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: #64d882;
+  }
+
+  .text-content {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #425766;
+  }
+
+  .text-primary-menu {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #222222;
+  }
+
+  .text-subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #425766;
+  }
+
+  .text-content-acc {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #425766;
+  }
+
+  .text-title-acc {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #222F39;
+  }
+
+  .text-btn {
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+  }
+
+  .text-title-donwnload {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+  }
+
+  .text-desc-download {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: #FFFFFF;
+  }
+
+  .text-help {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #425766;
+  }
+
+  .text-title-reward {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #425766;
+  }
+
+  .text-desc-reward {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #425766;
+  }
+
+  .range-reward {
+    width: 100%;
+  }
+
+  .number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00B242;
+    font-weight: bold;
+    padding: 10px;
+    background: linear-gradient(323.37deg, #D9F2DF 9.5%, rgba(228, 246, 232, 0) 81.86%);
+  }
+
+  .number-acc {
+    width: 103px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00B242;
+    font-weight: bold;
+    background: linear-gradient(323.37deg, #D9F2DF 9.5%, rgba(228, 246, 232, 0) 81.86%);
+  }
+
+  .p-x-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn-join {
+    background: #2DBE60;
+    box-shadow: 0px 6px 6px rgba(213, 213, 213, 0.4);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 315px;
+    height: 48px;
+    border: none;
+    transition: all 0.4 ease;
+  }
+
+  .btn-join:hover {
+    background: #218d47;
+    transition: all 0.4 ease;
+  }
+
+  .btn-download-white {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    transition: all 0.4 ease;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #00B242;
+  }
+
+  .btn-outline-help {
+    border: 1px solid #00B242;
+    filter: drop-shadow(0px 12px 28px rgba(15, 62, 32, 0.1));
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #00B242;
+    background: #fff;
+  }
+
+  .btn-outline-help:hover {
+    color: #08993d;
+    background: #cfcfcf;
+  }
+
+  .mt-32 {
+    margin-top: 32px
+  }
+
+  .mt-64 {
+    margin-top: 64px;
+  }
+
+  .mb-32 {
+    margin-bottom: 32px;
+  }
+
+  .mb-24 {
+    margin-bottom: 24px;
+  }
+
+  .mb-56 {
+    margin-bottom: 56px;
+  }
+
+  .mr-8 {
+    margin-right: 8px;
+  }
+
+  .mb-16 {
+    margin-bottom: 16px;
+  }
+
+  footer {
+    margin: auto;
+    max-width: 360px;
+  }
+
+  .mySwiper2 {
+    width: 100%;
+    height: 200px;
+  }
+
+  .mySwiper {
+    width: 100%;
+    height: 100px;
+  }
+
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -20px;
+    position: relative;
+  }
+
+  .range-labels span {
+    width: 18px;
+    height: 18px;
+    background: #CCD7DF;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .container-reward input[type=range]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    margin: -4px 0 0;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+    border: 0 !important;
+    z-index: 900;
+  }
+
+  .container-reward input[type=range]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    margin: -4px 0 0;
+    border-radius: 50%;
+    background: #37adbf;
+    cursor: pointer;
+    border: 0 !important;
+    z-index: 900;
+  }
+
+  .container-reward input[type=range]::-ms-thumb {
+    width: 24px;
+    height: 24px;
+    margin: -4px 0 0;
+    border-radius: 50%;
+    background: #37adbf;
+    cursor: pointer;
+    border: 0 !important;
+    z-index: 900;
+  }
+
+  .container-reward input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+  }
+
+  .reward-active {
+    background: #007aff !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    .container-sm {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style>
+
+<div class="frame-size">
+  <div class="container-how-work p-x-16">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="container-banner-img">
+            <img src="{{ url_for('static', filename='images/master_cuan/logo_landx.webp') }}" class='img-center mt-32'
+              alt="logo" />
+            <img src="{{ url_for('static', filename='images/master_cuan/banner_master_cuan.webp') }}" alt="logo"
+              class='img-center mb-24 img-fluid' />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-title">Apa itu Master Cuan</h1>
+          <p class="text-content">
+            Makannya Bikin Kenyang, Dividennya Bikin Mapan! Wujudkan impianmu jadi BOS Restoran di tahun 2022! Mau punya
+            bisnis resto kayak apa? Mau yang punya puluhan cabang, yang ordernya ribuan, atau cari yang partnernya
+            berpengalaman?
+            <br />
+            <br />
+            Semuanya ada di bulan ini!
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-title text-center mt-64 mb-56">Mengapa saya harus bergabung dengan Master Cuan?</h1>
+          <h2 class='text-subtitle'>
+            Jadi Pemilik F&B SEKARANG JUGA!
+          </h2>
+          <p class="text-content text-center">
+            Dengan mengikuti Master Cuan kamu bisa jadi pemilik bisnis F&B lebih dari satu bisnis dan mendapatkan
+            benefit yang akan meningkatkan networking kamu dan pengetahuan keuangan kamu!
+          </p>
+          <h2 class='text-subtitle mt-64'>
+            Exclusive Finance Bootcamp
+          </h2>
+          <p class="text-content text-center mb-56">
+            Menjadi investor di LandX engga hanya mendapatkan cuannya, tapi kamu bisa mendapatkan keuntungan yang lebih
+            yaitu pengetahuan baru mengenai finance, bertemu dengan para expert di dunia keuangan dan networking dengan
+            investor lainnya!
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-title mb-56">Cara Kerja Master Cuan</h1>
+        </div>
+        <p class="d-flex">
+          <span class="number mr-8">1</span> Tanggal promo: 24 Januari 2022 - 13 Februari 2022
+        </p>
+        <p class="d-flex">
+          <span class="number mr-8">2</span> Berlaku untuk semua pengguna LandX
+        </p>
+        <p class="d-flex">
+          <span class="number mr-8">3</span> Kamu bisa lakukan transaksi melalui aplikasi LandX
+        <p class="d-flex">
+          <span class="number mr-8">4</span> Kamu bisa melakukan transaksi lebih dari satu project
+        </p>
+        <p class="d-flex">
+          <span class="number mr-8">5</span> Kamu akan mendapatkan benefit dari campaign ini setelah tanggal 13 Februari
+          2022
+        </p>
+        <p class="d-flex">
+          <span class="number mr-8">6</span> Kamu bisa melakukan penambahan lot selama campaign ini berlangsung
+        </p>
+        <p class="d-flex">
+          <span class="number mr-8">7</span> Masa tenggang penambahan lot hingga tanggal 13 Februari 2022 pukul 23:59
+        </p>
+      </div>
+
+      <div class="container-reward">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-title text-center">Master Cuan Reward</h1>
+          </div>
+        </div>
+
+        <!-- Slider Master Cuan Reward -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div className="container-icon mx-auto"
+                style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
+                <img src="{{ url_for('static', filename='images/master_cuan/20-lot.png') }}" alt="icon" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div className="container-icon mx-auto"
+                style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
+                <img src="{{ url_for('static', filename='images/master_cuan/50-lot.png') }}" alt="icon" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div className="container-icon mx-auto"
+                style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
+                <img src="{{ url_for('static', filename='images/master_cuan/100-lot.png') }}" alt="icon" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div className="container-icon mx-auto"
+                style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
+                <img src="{{ url_for('static', filename='images/master_cuan/250-lot.png') }}" alt="icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12" class="text-center">
+            <input type="range" min="0" max="3" class="range-reward" id="range-reward" list="reward" />
+            <div class="range-labels">
+              <span id='reward-1' class='reward-active'></span>
+              <span id='reward-2'></span>
+              <span id='reward-3'></span>
+              <span id='reward-4'></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider main container -->
+        <div thumbsSlider="" class="swiper mySwiper2">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide container-text-reward">
+              <h4 class='text-title-reward'>Reward - 20 Lot</h4>
+              <p class='text-desc-reward'>Dapatkan Mini Finance Bootcamp with Experts</p>
+            </div>
+            <div class="swiper-slide container-text-reward">
+              <h4 class='text-title-reward'>Reward - 50 Lot</h4>
+              <p class='text-desc-reward'>Dapatkan EXCLUSIVE Mini Finance Bootcamp with Experts</p>
+            </div>
+            <div class="swiper-slide container-text-reward">
+              <h4 class='text-title-reward'>Reward - 100 Lot</h4>
+              <p class='text-desc-reward'>Dapatkan Offline Finance Bootcamp with Experts, Happy Hour Meetup & Discussion
+                with Speakers</p>
+            </div>
+            <div class="swiper-slide container-text-reward">
+              <h4 class='text-title-reward'>Reward - 250 Lot</h4>
+              <p class='text-desc-reward'>Dapatkan Offline Bootcamp Finance with Experts & Business tour</p>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-title text-center mb-32">Frequently Asked Questions</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed text-title-acc" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Apa itu program Master Cuan
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-content-acc">
+                  Program Master Cuan adalah program khusus investor LandX agar menjadi juragan bisnis FnB di LandX
+                  dengan minimal pembelian hanya 20 lot saja pada project FnB yang sedang listing.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed text-title-acc" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Benefitnya apa saja?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-content-acc">
+                  <p class="d-flex">
+                    <span class="number-acc mr-8">1</span> Pembelian minimal 20 lot akan mendapatkan Mini Finance
+                    Bootcamp
+                    with the expert (2 webinar in 2 months - January & February), berlaku untuk 1000 orang
+                  </p>
+                  <p class="d-flex">
+                    <span class="number-acc mr-8">2</span> Pembelian minimal 50 lot akan mendapatkan Finance bootcamp
+                    with
+                    the expert (4 webinar in 3 months February - April) berlaku untuk 1000 orang
+                  </p>
+                  <p class="d-flex">
+                    <span class="number-acc mr-8">3</span> Pembelian minimal 100 lot -> akan mendapatkan Offline
+                    bootcamp
+                    finance with the expert + happy hour meetup di satu tempat, berlaku untuk 100 orang (batch system
+                    - per batch ada 20 orang)
+                  <p class="d-flex">
+                    <span class="number-acc mr-8">4</span> Pembelian minimal 250 lot akan mendapatkan Offline bootcamp
+                    finance with the expert + F&B and Business tour, berlaku untuk 100 orang (batch system - per batch
+                    ada 20 orang)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed text-title-acc" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Syarat ikutan bagaimana?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-content-acc">
+                  Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed text-title-acc" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-content-acc">
+                  Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed text-title-acc" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Saya sudah mengisi form, selanjutnya bagaimana?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-content-acc">
+                  Setelah mengisi form Kakak akan menerima email otomatis yang mengarahkan Kakak untuk melakukan
+                  pembelian di aplikasi LandX, lakukan pembelian project FnB yang sedang listing di LandX sesuai
+                  dengan total lot yang ingin Kakak beli.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center mt-32">
+          <button class="btn-join text-btn">Gabung Sekarang</button>
+        </div>
+        <div class="col-12">
+          <div class="container-download mt-64 mb-32">
+            <div class="row">
+              <div class="col-3">
+                <div class="container-mini-logo">
+                  <img src="{{ url_for('static', filename='images/master_cuan/mini_logo_1.png') }}" alt="logo" />
+                </div>
+              </div>
+              <div class="col-9">
+                <h4 class='text-title-donwnload'>Download Aplikasi LandX</h4>
+                <p class='text-desc-download'>Kini memiliki bisnis dan properti jadi jauh lebih mudah. Unduh aplikasi
+                  LandX sekarang</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <button class="btn-download-white">
+                  Install Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h4 class='text-help mb-16'>Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</h4>
+        </div>
+        <div class="col-12 text-center">
+          <a href="https://wa.link/wwcvhi">
+            <button class="btn-outline-help mb-16">
+              WA Customer Service 1
+            </button>
+          </a>
+          <a href="https://wa.link/fho9yk">
+            <button class="btn-outline-help">
+              WA Customer Service 2
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer TODO: move to layout -->
+  <footer style="background-color: #fff;">
+    <div class="footer-cuan">
+      <div class="menu-link pt-4">
+        <div class="col-md-12 mb-2">
+          <a href="">Mengapa LandX</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Proyek</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="/cara-kerja">Cara Kerja</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Blog</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Perusahaan</a>
+        </div>
+      </div>
+      <div class="menu-link2">
+        <div class="col-md-12 mb-2">
+          <a href="">Karir</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Syarat & Ketentuan</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Kebijakan Privasi</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Service Level Agreement</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Kebijakan ISMS</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">Mitigasi Resiko</a>
+        </div>
+        <div class="col-md-12 mb-2">
+          <a href="">FAQ</a>
+        </div>
+      </div>
+      <div class="mt-4">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
+        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
+      </div>
+      <div class="mt-4">
+        <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
+      </div>
+    </div>
+    <div class="row text-center pt-3 pb-3 footer-menu">
+      <div class="col-4 col-md-4">
+        <a href="/home">
+          <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
+          <p class="footer-menu-active">Home</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-4">
+        <a href="/cara-kerja">
+          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+          <p>Cara Kerja</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-4">
+        <a href="/profile">
+          <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+          <p>Profile</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+  let indexSwiper = 0
+  document.getElementById('range-reward').value = indexSwiper;
+  let reward1 = document.getElementById('reward-1')
+  let reward2 = document.getElementById('reward-2')
+  let reward3 = document.getElementById('reward-3')
+  let reward4 = document.getElementById('reward-4')
+
+  var swiperIcon = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    freeMode: true,
+    watchSlidesProgress: true,
+    allowTouchMove: false,
+  });
+
+  var swiper = new Swiper(".mySwiper2", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    thumbs: {
+      swiper: swiperIcon,
+    },
+  });
+
+  swiper.on('transitionEnd', function () {
+    let indexSwiper = 0
+    document.getElementById('range-reward').value = indexSwiper;
+    indexSwiper += swiper.realIndex
+    document.getElementById('range-reward').value = indexSwiper;
+
+    if (indexSwiper >= 1) {
+      reward2.classList.add("reward-active")
+    }
+    if (indexSwiper >= 2) {
+      reward3.classList.add("reward-active")
+    }
+    if (indexSwiper >= 3) {
+      reward4.classList.add("reward-active")
+    }
+  });
+
+
+</script>
+{% endblock content %}
