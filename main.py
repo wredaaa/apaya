@@ -19,5 +19,9 @@ def about():
 def detail():
   return render_template('detail_project.html')
 
+@app.route("/cara-kerja")
+def caraKerja():
+  return render_template('cara_kerja.html')
+
 if __name__ == '__main__':
   app.run(debug=True) 
