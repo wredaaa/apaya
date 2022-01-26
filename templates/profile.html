@@ -126,7 +126,7 @@
       <div class="col-12">
         <div class="accordion" id="accordionExample">
           <div class="steps">
-            <progress id="progress-games" value=1 max=4></progress>
+            <progress id="progress-games" max=4></progress>
             <div class="step-item v-hide">
               <button class="step-button text-center step-button-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -182,130 +182,96 @@
     <!-- Reward -->
     <section>
       <div class="mt-6">
-        <p class="title-reward">Reward</p>
-        <div class="background-reward reward-active">
+        <p class="title-reward title-reward-1 d-none">Reward</p>
+        <div class="background-reward reward-active mb-3 reward-unlock-1 d-none">
           <p class="subtitle-reward desc-reward-active">Reward - 20 Lot</p>
-          <p class="desc-reward desc-reward-active">Offline bootcamp finance with the expert + happy hour meet up di
-            satu tempat untuk 100 orang (batch system - per batch ada 20 orang)</p>
+          <p class="desc-reward desc-reward-active">Mini Finance Bootcamp with Experts</p>
+        </div>
+        <div class="background-reward reward-active mb-3 reward-unlock-2 d-none">
+          <p class="subtitle-reward desc-reward-active">Reward - 50 Lot</p>
+          <p class="desc-reward desc-reward-active">EXCLUSIVE Mini Finance Bootcamp with Experts</p>
+        </div>
+        <div class="background-reward reward-active mb-3 reward-unlock-3 d-none">
+          <p class="subtitle-reward desc-reward-active">Reward - 100 Lot</p>
+          <p class="desc-reward desc-reward-active">Offline Finance Bootcamp with Experts Happy Hour Meetup & Discussion
+            with Speakers</p>
+        </div>
+        <div class="background-reward reward-active mb-3 reward-unlock-4 d-none">
+          <p class="subtitle-reward desc-reward-active">Reward - 250 Lot</p>
+          <p class="desc-reward desc-reward-active">Offline Bootcamp Finance with Experts Business tour</p>
         </div>
       </div>
       <div class="mt-4">
-        <p class="title-reward">Waiting to be unlocked</p>
-        <div class="background-reward">
+        <p class="title-reward title-reward-2">Waiting to be unlocked</p>
+        <div class="background-reward mb-3 reward-lock-1">
+          <p class="subtitle-reward">Reward - 20 Lot</p>
+          <p class="desc-reward">Mini Finance Bootcamp with Experts</p>
+        </div>
+        <div class="background-reward mb-3 reward-lock-2 d-none">
           <p class="subtitle-reward">Reward - 50 Lot</p>
-          <p class="desc-reward">Offline bootcamp finance with the expert + happy hour meet up di satu tempat untuk 100
-            orang (batch system - per batch ada 20 orang)</p>
+          <p class="desc-reward">EXCLUSIVE Mini Finance Bootcamp with Experts</p>
+        </div>
+        <div class="background-reward mb-3 reward-lock-3 d-none">
+          <p class="subtitle-reward">Reward - 100 Lot</p>
+          <p class="desc-reward">Offline Finance Bootcamp with Experts Happy Hour Meetup & Discussion with Speakers</p>
+        </div>
+        <div class="background-reward mb-3 reward-lock-4 d-none">
+          <p class="subtitle-reward">Reward - 250 Lot</p>
+          <p class="desc-reward">Offline Bootcamp Finance with Experts Business tour</p>
         </div>
       </div>
     </section>
   </div>
   <!-- Footer TODO: move to layout -->
-  <footer style="background-color: #fff;">
-    <div class="row text-center pt-3 pb-3 footer-menu">
-      <div class="col-md-4">
-        <a href="/home">
-          <img src="{{ url_for('static', filename='images/master_cuan/home.png') }}">
-          <p class="">Home</p>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="/cara-kerja">
-          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-          <p>Cara Kerja</p>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="/profile">
-          <img src="{{ url_for('static', filename='images/master_cuan/user_active.png') }}">
-          <p class="footer-menu-active">Profile</p>
-        </a>
-      </div>
+  <div class="row text-center pt-3 pb-3 footer-menu">
+    <div class="col-md-4">
+      <a href="/home">
+        <img src="{{ url_for('static', filename='images/master_cuan/home.png') }}">
+        <p class="">Home</p>
+      </a>
     </div>
-  </footer>
+    <div class="col-md-4">
+      <a href="/cara-kerja">
+        <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+        <p>Cara Kerja</p>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="/profile">
+        <img src="{{ url_for('static', filename='images/master_cuan/user_active.png') }}">
+        <p class="footer-menu-active">Profile</p>
+      </a>
+    </div>
+  </div>
 </div>
 
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script>
-  let indexSwiper = 0
-  document.getElementById('range-reward').value = indexSwiper;
-  let reward1 = document.getElementById('reward-1')
-  let reward2 = document.getElementById('reward-2')
-  let reward3 = document.getElementById('reward-3')
-  let reward4 = document.getElementById('reward-4')
-
-  var swiperIcon = new Swiper(".mySwiper", {
-    spaceBetween: 10,
-    freeMode: true,
-    watchSlidesProgress: true,
-    allowTouchMove: false,
-  });
-
-  var swiper = new Swiper(".mySwiper2", {
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    thumbs: {
-      swiper: swiperIcon,
-    },
-  });
-
-  swiper.on('transitionEnd', function () {
-    let indexSwiper = 0
-    document.getElementById('range-reward').value = indexSwiper;
-    indexSwiper += swiper.realIndex
-    document.getElementById('range-reward').value = indexSwiper;
-
-    if (indexSwiper >= 1) {
-      reward2.classList.add("reward-active")
-    }
-    if (indexSwiper >= 2) {
-      reward3.classList.add("reward-active")
-    }
-    if (indexSwiper >= 3) {
-      reward4.classList.add("reward-active")
-    }
-
-    if (indexSwiper < 1) {
-      reward2.classList.remove("reward-active")
-    }
-    if (indexSwiper < 2) {
-      reward3.classList.remove("reward-active")
-    }
-    if (indexSwiper < 3) {
-      reward4.classList.remove("reward-active")
-    }
-  });
-
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <script>
-  let valOrder = 0;
+  let valOrder = -1;
   const stepButtons = document.querySelectorAll('.step-button');
-  const progress = document.querySelector('#progress-games');
+  let progress = document.querySelector('#progress-games');
   const circle1 = document.querySelector('.step-button-1')
   const circle2 = document.querySelector('.step-button-2')
   const circle3 = document.querySelector('.step-button-3')
   const circle4 = document.querySelector('.step-button-4')
+  progress.value = 0
 
   if (valOrder >= 0) {
     circle1.classList.add('done');
+    progress.value = 1
   }
   if (valOrder >= 1) {
     circle2.classList.add('done');
+    progress.value = 2
   }
   if (valOrder >= 2) {
     circle3.classList.add('done');
+    progress.value = 3
   }
   if (valOrder >= 3) {
     circle4.classList.add('done');
+    progress.value = 4
   }
   if (valOrder < 0) {
     circle1.classList.remove('done');
@@ -322,7 +288,6 @@
 </script>
 <script>
   let icon = document.querySelector('#icon-emoji')
-  console.log(icon)
   if (valOrder >= 0) {
     icon.innerHTML = '😘'
   }
@@ -334,6 +299,40 @@
   }
   if (valOrder >= 3) {
     icon.innerHTML = '🤑'
+  }
+</script>
+<script>
+  const rewardUnlock1 = document.querySelector('.reward-unlock-1');
+  const rewardUnlock2 = document.querySelector('.reward-unlock-2');
+  const rewardUnlock3 = document.querySelector('.reward-unlock-3');
+  const rewardUnlock4 = document.querySelector('.reward-unlock-4');
+  const rewardlock1 = document.querySelector('.reward-lock-1');
+  const rewardlock2 = document.querySelector('.reward-lock-2');
+  const rewardlock3 = document.querySelector('.reward-lock-3');
+  const rewardlock4 = document.querySelector('.reward-lock-4');
+  const titleReward1 = document.querySelector('.title-reward-1');
+  const titleReward2 = document.querySelector('.title-reward-2');
+
+  if (valOrder >= 0) {
+    titleReward1.classList.remove('d-none')
+    rewardUnlock1.classList.remove('d-none');
+    rewardlock1.classList.add('d-none');
+    rewardlock2.classList.remove('d-none');
+  }
+  if (valOrder >= 1) {
+    rewardUnlock2.classList.remove('d-none');
+    rewardlock2.classList.add('d-none');
+    rewardlock3.classList.remove('d-none');
+  }
+  if (valOrder >= 2) {
+    rewardUnlock3.classList.remove('d-none');
+    rewardlock3.classList.add('d-none');
+    rewardlock4.classList.remove('d-none');
+  }
+  if (valOrder >= 3) {
+    rewardUnlock4.classList.remove('d-none');
+    rewardlock4.classList.add('d-none');
+    titleReward2.classList.add('d-none');
   }
 </script>
 {% endblock content %}

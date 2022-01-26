@@ -185,6 +185,52 @@
     color: #9E9E9E;
     white-space: nowrap !important;
   }
+
+  .w-100px {
+    width: 100px !important;
+  }
+
+  .container-kalkulator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #F5F5F7;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-bottom: 24px;
+  }
+
+  .operator-border {
+    width: 28px;
+    height: 28px;
+    border: 2px solid#425766;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .operator-border:hover {
+    background-color: #e6e6e6;
+  }
+
+  .mt-min-2 {
+    margin-top: -2px;
+  }
+
+  .number-kalkulator {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-info {
+    color: #000;
+    font-size: 14px;
+  }
 </style>
 
 <div class="frame-size">
@@ -225,14 +271,13 @@
       </div>
     </div>
 
-    <!-- Update start -->
     <!-- Slider main container -->
     <div class="swiper my-4">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper nav nav-tabs scrollmenu" id="nav-tab" role="tablist">
         <!-- Slides -->
-        <div class="swiper-slide active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button"
-          role="tab" aria-controls="nav-info" aria-selected="true">
+        <div class="swiper-slide active w-100px" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info"
+          type="button" role="tab" aria-controls="nav-info" aria-selected="true">
           <span>
             Info Proyek
           </span>
@@ -257,7 +302,6 @@
         </div>
       </div>
     </div>
-    <!-- Update end -->
 
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
@@ -313,10 +357,13 @@
 
             <div class="row mt-3">
               <div class="col-7 col-md-7">
-                <p class="card-title detail-lot">Periode Dividen</p>
+                <p class="card-title detail-lot">Periode Dividen <i class="fa fa-info-circle icon-info per-divider"
+                    aria-hidden="true" data-bs-toggle="modal" data-bs-target="#perDividen"></i>
+                </p>
               </div>
               <div class="col-5 col-md-5" style="padding-left: 0;">
-                <p class="card-title detail-lot">Estimasi Dividen</p>
+                <p class="card-title detail-lot">Estimasi Dividen <i class="fa fa-info-circle icon-info est-divider"
+                    aria-hidden="true" data-bs-toggle="modal" data-bs-target="#estDividen"></i></p>
               </div>
             </div>
             <div class="row">
@@ -369,7 +416,8 @@
             <p class="card-title detail-lot">Harga per Lot</p>
           </div>
           <div class="col-5 col-md-5" style="padding-left: 0;">
-            <p class="card-title detail-lot">Estimasi Dividen</p>
+            <p class="card-title detail-lot">Estimasi Dividen <i class="fa fa-info-circle icon-info est-divider"
+                aria-hidden="true" data-bs-toggle="modal" data-bs-target="#estDividen"></i></p>
           </div>
         </div>
         <div class="row">
@@ -381,6 +429,17 @@
           </div>
         </div>
         <hr />
+
+        <!-- update -->
+        <div class="col-12">
+          <div class="container-kalkulator">
+            <div class="operator-border kalku-min" onclick="minCalculator()">-</div>
+            <div class='number-kalkulator'></div>
+            <div class="operator-border mt-min-2 kalku-plus" onclick="plusCalculator()">+</div>
+          </div>
+        </div>
+        <!-- update -->
+
         <div class="border-kalku">
           <div class="col-12 col-md-12">
             <p class="card-title detail-lot">Total Investasi</p>
@@ -428,7 +487,55 @@
 
 </div>
 
-<!-- Update start -->
+<!-- Modal -->
+<div class="modal fade" id="perDividen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-info-circle" aria-hidden="true"></i> Periode
+          Dividen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Periode dividen aktual akan tetap mengacu pada laporan keuangan dan persetujuan Rapat Umum Pemegang Saham
+        (RUPS).
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success mx-auto" data-bs-dismiss="modal">Ok, saya mengerti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="estDividen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-info-circle" aria-hidden="true"></i> Estimasi
+          Dividen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <b>Disclaimer</b>
+        <p>
+          Kinerja masa lalu bukan merupakan indikasi kinerja masa depan.
+        </p>
+        <p>
+          Estimasi dividen adalah ilustrasi berdasarkan proyeksi konservatif, dividen aktual akan tetap mengacu pada
+          kinerja penerbit dan persetujuan Rapat Umum Pemegang Saham (RUPS).
+        </p>
+        <p>
+          Estimasi dividen belum termasuk potensi capital gain dari kenaikan harga saham.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success mx-auto" data-bs-dismiss="modal">Ok, saya mengerti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
@@ -452,5 +559,25 @@
     },
   });
 </script>
-<!-- Update end -->
+<!-- Update -->
+<script>
+  const numberKalkulator = document.querySelector('.number-kalkulator');
+  const plusKalulator = document.querySelector('.kalku-plus');
+  const minKalulator = document.querySelector('.kalku-min');
+  let numberKalku = 0
+  numberKalkulator.innerHTML = numberKalku
+
+  const plusCalculator = () => {
+    numberKalku += 1
+    numberKalkulator.innerHTML = numberKalku
+  }
+
+  const minCalculator = () => {
+    if (numberKalku > 0) {
+      numberKalku -= 1
+      numberKalkulator.innerHTML = numberKalku
+    }
+  }
+</script>
+<!-- Update -->
 {% endblock content %}

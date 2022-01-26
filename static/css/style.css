@@ -391,9 +391,22 @@ body {
   height: 8px;
 }
 
+.footer-menu {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  max-width: 470px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  z-index: 999;
+}
+
 @media screen and (max-width: 576px) {
   .container-sm {
     padding-left: 0;
     padding-right: 0;
+    z-index: 999;
+    background-color: red;
   }
 }

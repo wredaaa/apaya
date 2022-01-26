@@ -181,28 +181,29 @@
           <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
         </div>
       </div>
-      <div class="row text-center pt-3 pb-3 footer-menu">
-        <div class="col-4 col-md-4">
-          <a href="/home">
-            <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
-            <p class="footer-menu-active">Home</p>
-          </a>
-        </div>
-        <div class="col-4 col-md-4">
-          <a href="/cara-kerja">
-            <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-            <p>Cara Kerja</p>
-          </a>
-        </div>
-        <div class="col-4 col-md-4">
-          <a href="/profile">
-            <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
-            <p>Profile</p>
-          </a>
-        </div>
-      </div>
     </div>
   </footer>
+
+  <div class="row text-center pt-3 pb-3 footer-menu">
+    <div class="col-4 col-md-4">
+      <a href="/home">
+        <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
+        <p class="footer-menu-active">Home</p>
+      </a>
+    </div>
+    <div class="col-4 col-md-4">
+      <a href="/cara-kerja">
+        <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+        <p>Cara Kerja</p>
+      </a>
+    </div>
+    <div class="col-4 col-md-4">
+      <a href="/profile">
+        <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+        <p>Profile</p>
+      </a>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}
