@@ -1,83 +1,177 @@
 {% extends "layout.html" %}
 {% block content %}
 
-  <div class="frame-size">
-    <div class="banner-profile pb-3">
-      <div class="row box-space" style="margin-bottom: 15px;">
-        <div class="col-6 col-md-6 menu-back">
-          <p>Profile</p>
-        </div>
-        <div class="col-6 col-md-6 menu-back" style="text-align-last: right;">
-          <img width="24" src="{{ url_for('static', filename='images/master_cuan/chevron.png') }}">
-        </div>
+<style>
+  .profile-range {
+    width: 100%;
+  }
+
+  .container-range-profile .profile-range {
+    background-color: #fff;
+  }
+
+  .container-range-profile #range-profile span {
+    background-color: red;
+    width: 24px;
+    height: 24px;
+    color: yellow;
+  }
+</style>
+
+<div class="container-sm">
+  <div class="banner-profile pb-3">
+    <div class="row box-space" style="margin-bottom: 15px;">
+      <div class="col-6 col-md-6 menu-back">
+        <p>Profile</p>
       </div>
-      <div class="row box-space">
-        <div class="col-sm-6 col-md-8 text-name">
-          <p>Hai, Wreda Prasetiyo W</p>
-        </div>
-        <div class="col-sm-6 col-md-4 text-lot">
-          <p>Total Lot : 0</p>
-        </div>
-      </div>
-      <div class="row box-space" style="justify-content: center;">
-        <div class="col-3 col-md-3">
-          <p class="emoji">&#128578;</p>
-          <p class="total-lot mt-2">0 Lot</p>
-        </div>
+      <div class="col-6 col-md-6 menu-back" style="text-align-last: right;">
+        <img width="24" src="{{ url_for('static', filename='images/master_cuan/chevron.png') }}">
       </div>
     </div>
-    <div class="banner-body">
-      <section>
-        <ul id="progressbar">
-          <li class="active" id="account">
-            <p>20 Lot</p>
-          </li>
-          <li id="personal"><strong>50 Lot</strong></li>
-          <li id="payment"><strong>100 Lot</strong></li>
-          <li id="confirm"><strong>250 Lot</strong></li>
-      </ul>
-      </section>
-      <!-- Reward -->
-      <section> 
-        <div class="mt-6">
-          <p class="title-reward">Reward</p>    
-          <div class="background-reward reward-active">
-            <p class="subtitle-reward desc-reward-active">Reward - 20 Lot</p>
-            <p class="desc-reward desc-reward-active">Offline bootcamp finance with the expert + happy hour meet up di satu tempat untuk 100 orang (batch system - per batch ada 20 orang)</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <p class="title-reward">Waiting to be unlocked</p>    
-          <div class="background-reward">
-            <p class="subtitle-reward">Reward - 50 Lot</p>
-            <p class="desc-reward">Offline bootcamp finance with the expert + happy hour meet up di satu tempat untuk 100 orang (batch system - per batch ada 20 orang)</p>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- Footer TODO: move to layout -->
-    <footer style="background-color: #fff;">
-      <div class="row text-center pt-3 pb-3 footer-menu">
-        <div class="col-md-4">
-          <a href="/home">
-            <img src="{{ url_for('static', filename='images/master_cuan/home.png') }}">
-            <p class="">Home</p>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="/cara-kerja">
-            <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-            <p>Cara Kerja</p>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="/profile">
-            <img src="{{ url_for('static', filename='images/master_cuan/user_active.png') }}">
-            <p class="footer-menu-active">Profile</p>
-          </a>
-        </div>
+    <div class="row box-space">
+      <div class="col-sm-6 col-md-8 text-name">
+        <p>Hai, Wreda Prasetiyo W</p>
       </div>
-    </footer>
+      <div class="col-sm-6 col-md-4 text-lot">
+        <p>Total Lot : 0</p>
+      </div>
+    </div>
+    <div class="row box-space" style="justify-content: center;">
+      <div class="col-3 col-md-3">
+        <p class="emoji">&#128578;</p>
+        <p class="total-lot mt-2">0 Lot</p>
+      </div>
+    </div>
   </div>
 
+  <div class="container container-range-profile">
+    <div class="row">
+      <div class="col-12" class="text-center">
+        <input type="range" min="0" max="250" value='20' list="range-profile" class="profile-range" />
+        <datalist id="range-profile">
+          <option value="20" label='20lot'><span>a</span></option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="250">250</option>
+        </datalist>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-body">
+    <section>
+      <ul id="progressbar">
+        <li class="active" id="account">
+          <p>20 Lot</p>
+        </li>
+        <li id="personal"><strong>50 Lot</strong></li>
+        <li id="payment"><strong>100 Lot</strong></li>
+        <li id="confirm"><strong>250 Lot</strong></li>
+      </ul>
+    </section>
+    <!-- Reward -->
+    <section>
+      <div class="mt-6">
+        <p class="title-reward">Reward</p>
+        <div class="background-reward reward-active">
+          <p class="subtitle-reward desc-reward-active">Reward - 20 Lot</p>
+          <p class="desc-reward desc-reward-active">Offline bootcamp finance with the expert + happy hour meet up di
+            satu tempat untuk 100 orang (batch system - per batch ada 20 orang)</p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <p class="title-reward">Waiting to be unlocked</p>
+        <div class="background-reward">
+          <p class="subtitle-reward">Reward - 50 Lot</p>
+          <p class="desc-reward">Offline bootcamp finance with the expert + happy hour meet up di satu tempat untuk 100
+            orang (batch system - per batch ada 20 orang)</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Footer TODO: move to layout -->
+  <footer style="background-color: #fff;">
+    <div class="row text-center pt-3 pb-3 footer-menu">
+      <div class="col-md-4">
+        <a href="/home">
+          <img src="{{ url_for('static', filename='images/master_cuan/home.png') }}">
+          <p class="">Home</p>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="/cara-kerja">
+          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+          <p>Cara Kerja</p>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="/profile">
+          <img src="{{ url_for('static', filename='images/master_cuan/user_active.png') }}">
+          <p class="footer-menu-active">Profile</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+  let indexSwiper = 0
+  document.getElementById('range-reward').value = indexSwiper;
+  let reward1 = document.getElementById('reward-1')
+  let reward2 = document.getElementById('reward-2')
+  let reward3 = document.getElementById('reward-3')
+  let reward4 = document.getElementById('reward-4')
+
+  var swiperIcon = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    freeMode: true,
+    watchSlidesProgress: true,
+    allowTouchMove: false,
+  });
+
+  var swiper = new Swiper(".mySwiper2", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    thumbs: {
+      swiper: swiperIcon,
+    },
+  });
+
+  swiper.on('transitionEnd', function () {
+    let indexSwiper = 0
+    document.getElementById('range-reward').value = indexSwiper;
+    indexSwiper += swiper.realIndex
+    document.getElementById('range-reward').value = indexSwiper;
+
+    if (indexSwiper >= 1) {
+      reward2.classList.add("reward-active")
+    }
+    if (indexSwiper >= 2) {
+      reward3.classList.add("reward-active")
+    }
+    if (indexSwiper >= 3) {
+      reward4.classList.add("reward-active")
+    }
+
+    if (indexSwiper < 1) {
+      reward2.classList.remove("reward-active")
+    }
+    if (indexSwiper < 2) {
+      reward3.classList.remove("reward-active")
+    }
+    if (indexSwiper < 3) {
+      reward4.classList.remove("reward-active")
+    }
+  });
+
+
+</script>
 {% endblock content %}
