@@ -16,6 +16,83 @@
     height: 24px;
     color: yellow;
   }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .step-button {
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    border-radius: 50%;
+    border: none;
+    background-color: #efefef;
+    transition: .4s;
+    margin-top: -10px;
+  }
+
+  .step-button[aria-expanded="true"] {
+    width: 18px;
+    height: 18px;
+    background-color: #0075ff;
+    color: #fff;
+  }
+
+  .done {
+    background-color: #0075ff;
+    color: #fff;
+  }
+
+  .step-item {
+    z-index: 10;
+    text-align: center;
+  }
+
+  #progress-games {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 95%;
+    z-index: 5;
+    height: 8px;
+    margin-bottom: 13px;
+  }
+
+  /* to customize progress bar */
+  #progress-games::-webkit-progress-value {
+    background-color: #0075ff;
+    transition: .5s ease;
+  }
+
+  #progress-games::-webkit-progress-bar {
+    background-color: #efefef;
+
+  }
+
+  .ml-20 {
+    margin-left: 20px;
+  }
+
+  .ml-min-10 {
+    margin-left: -10px;
+  }
+
+  .v-hide {
+    visibility: hidden;
+  }
+
+  .step-title {
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #768C9E;
+  }
 </style>
 
 <div class="container-sm">
@@ -38,37 +115,70 @@
     </div>
     <div class="row box-space" style="justify-content: center;">
       <div class="col-3 col-md-3">
-        <p class="emoji">&#128578;</p>
+        <p class="emoji" id="icon-emoji">&#128578;</p>
         <p class="total-lot mt-2">0 Lot</p>
       </div>
     </div>
   </div>
 
-  <div class="container container-range-profile">
+  <div class="container" style="background-color: #fff;">
     <div class="row">
-      <div class="col-12" class="text-center">
-        <input type="range" min="0" max="250" value='20' list="range-profile" class="profile-range" />
-        <datalist id="range-profile">
-          <option value="20" label='20lot'><span>a</span></option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-          <option value="250">250</option>
-        </datalist>
+      <div class="col-12">
+        <div class="accordion" id="accordionExample">
+          <div class="steps">
+            <progress id="progress-games" value=1 max=4></progress>
+            <div class="step-item v-hide">
+              <button class="step-button text-center step-button-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+
+              </button>
+              <div class="step-title">
+                20 Lot
+              </div>
+            </div>
+            <div class="step-item">
+              <button class="step-button text-center step-button-1 ml-min-10" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+              </button>
+              <div class="step-title">
+                20 Lot
+              </div>
+            </div>
+            <div class="step-item">
+              <button class="step-button text-center  step-button-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+              </button>
+              <div class="step-title">
+                50 Lot
+              </div>
+            </div>
+            <div class="step-item">
+              <button class="step-button text-center  step-button-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+
+              </button>
+              <div class="step-title">
+                100 Lot
+              </div>
+            </div>
+            <div class="step-item">
+              <button class="step-button text-center  step-button-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+
+              </button>
+              <div class="step-title">
+                250 Lot
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="banner-body">
-    <section>
-      <ul id="progressbar">
-        <li class="active" id="account">
-          <p>20 Lot</p>
-        </li>
-        <li id="personal"><strong>50 Lot</strong></li>
-        <li id="payment"><strong>100 Lot</strong></li>
-        <li id="confirm"><strong>250 Lot</strong></li>
-      </ul>
-    </section>
     <!-- Reward -->
     <section>
       <div class="mt-6">
@@ -173,5 +283,57 @@
   });
 
 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script>
+  let valOrder = 0;
+  const stepButtons = document.querySelectorAll('.step-button');
+  const progress = document.querySelector('#progress-games');
+  const circle1 = document.querySelector('.step-button-1')
+  const circle2 = document.querySelector('.step-button-2')
+  const circle3 = document.querySelector('.step-button-3')
+  const circle4 = document.querySelector('.step-button-4')
+
+  if (valOrder >= 0) {
+    circle1.classList.add('done');
+  }
+  if (valOrder >= 1) {
+    circle2.classList.add('done');
+  }
+  if (valOrder >= 2) {
+    circle3.classList.add('done');
+  }
+  if (valOrder >= 3) {
+    circle4.classList.add('done');
+  }
+  if (valOrder < 0) {
+    circle1.classList.remove('done');
+  }
+  if (valOrder < 1) {
+    circle2.classList.remove('done');
+  }
+  if (valOrder < 2) {
+    circle3.classList.remove('done');
+  }
+  if (valOrder < 3) {
+    circle4.classList.remove('done');
+  }
+</script>
+<script>
+  let icon = document.querySelector('#icon-emoji')
+  console.log(icon)
+  if (valOrder >= 0) {
+    icon.innerHTML = '😘'
+  }
+  if (valOrder >= 1) {
+    icon.innerHTML = '😍'
+  }
+  if (valOrder >= 2) {
+    icon.innerHTML = '😎'
+  }
+  if (valOrder >= 3) {
+    icon.innerHTML = '🤑'
+  }
 </script>
 {% endblock content %}

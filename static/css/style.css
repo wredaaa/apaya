@@ -387,6 +387,10 @@ body {
   text-decoration: none;
 }
 
+.container-range-profile .progress {
+  height: 8px;
+}
+
 @media screen and (max-width: 576px) {
   .container-sm {
     padding-left: 0;
