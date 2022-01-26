@@ -1,10 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="frame-size">
+<style>
+  @media screen and (max-width: 576px) {
+    .banner-move {
+      width: 303px;
+    }
+  }
+</style>
+
+<div class="container-sm p-x-0">
   <div class="banner-container">
-    <img src="{{ url_for('static', filename='images/master_cuan/logo_white.webp') }}">
-    <img src="{{ url_for('static', filename='images/master_cuan/banner_master_cuan.webp') }}">
+    <img src="{{ url_for('static', filename='images/master_cuan/logo-master-cuan.webp') }}"
+      class='img-center mb-24 img-fluid' style="max-width: 312px;">
   </div>
   <div class="banner-move">
     <div class="row box-space">
@@ -110,75 +118,88 @@
     </section>
   </div>
   <!-- Footer TODO: move to layout -->
-  <footer style="background-color: #fff;">
-    <div class="footer-cuan">
-      <div class="menu-link pt-4">
-        <div class="col-md-12 mb-2">
-          <a href="">Mengapa LandX</a>
+  <footer>
+    <div class="container-sm px-0" style="background-color: #fff;">
+      <div class="footer-cuan">
+        <div class="menu-link pt-4">
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#why-landx">Mengapa LandX</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#ongoing-projects">Proyek</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#how-it-works">Cara Kerja</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/contact">Kontak</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/">Blog</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="">Perusahaan</a>
+          </div>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Proyek</a>
+        <div class="menu-link2">
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/jobs-at-landx/">Karir</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/syarat-dan-ketentuan">Syarat & Ketentuan</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/privacy-policy">Kebijakan Privasi</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/service-level-agreement">Service Level Agreement</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/kebijakan-isms">Kebijakan ISMS</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/mitigasi-risiko">Mitigasi Resiko</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/faq-landx/">FAQ</a>
+          </div>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Cara Kerja</a>
+        <div class="mt-4">
+          <a href="https://www.facebook.com/landx.id" class="text-decoration-none">
+            <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
+          </a>
+          <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company"
+            class="text-decoration-none">
+            <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
+          </a>
+          <a href="https://www.instagram.com/landx.id/" class="text-decoration-none">
+            <img style="padding-right: 15px;"
+              src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Blog</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Perusahaan</a>
+        <div class="mt-4">
+          <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
         </div>
       </div>
-      <div class="menu-link2">
-        <div class="col-md-12 mb-2">
-          <a href="">Karir</a>
+      <div class="row text-center pt-3 pb-3 footer-menu">
+        <div class="col-4 col-md-4">
+          <a href="/home">
+            <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
+            <p class="footer-menu-active">Home</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Syarat & Ketentuan</a>
+        <div class="col-4 col-md-4">
+          <a href="/cara-kerja">
+            <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
+            <p>Cara Kerja</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Kebijakan Privasi</a>
+        <div class="col-4 col-md-4">
+          <a href="/profile">
+            <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+            <p>Profile</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Service Level Agreement</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Kebijakan ISMS</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Mitigasi Resiko</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">FAQ</a>
-        </div>
-      </div>
-      <div class="mt-4">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
-      </div>
-      <div class="mt-4">
-        <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
-      </div>
-    </div>
-    <div class="row text-center pt-3 pb-3 footer-menu">
-      <div class="col-4 col-md-4">
-        <a href="">
-          <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
-          <p class="footer-menu-active">Home</p>
-        </a>
-      </div>
-      <div class="col-4 col-md-4">
-        <a href="">
-          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-          <p>Cara Kerja</p>
-        </a>
-      </div>
-      <div class="col-4 col-md-4">
-        <a href="/profile">
-          <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
-          <p>Profile</p>
-        </a>
       </div>
     </div>
   </footer>

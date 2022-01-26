@@ -7,12 +7,6 @@
     height: 100%;
   }
 
-  .container-sm {
-    max-width: 470px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
   .container-how-work .container-banner-img {
     width: 100%;
     text-align: center;
@@ -44,6 +38,7 @@
     height: 200px;
     border-radius: 8px;
     padding: 24px 32px;
+    cursor: pointer;
   }
 
   .container-icon {
@@ -175,8 +170,9 @@
   }
 
   .number-acc {
-    width: 103px;
+    width: 24px;
     height: 24px;
+    padding: 8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -184,6 +180,10 @@
     color: #00B242;
     font-weight: bold;
     background: linear-gradient(323.37deg, #D9F2DF 9.5%, rgba(228, 246, 232, 0) 81.86%);
+  }
+
+  .b-r-8 {
+    border-radius: 8px;
   }
 
   .p-x-16 {
@@ -196,6 +196,7 @@
     box-shadow: 0px 6px 6px rgba(213, 213, 213, 0.4);
     border-radius: 8px;
     padding: 12px 16px;
+    max-width: 315px;
     width: 315px;
     height: 48px;
     border: none;
@@ -268,7 +269,6 @@
 
   footer {
     margin: auto;
-    max-width: 360px;
   }
 
   .mySwiper2 {
@@ -345,10 +345,14 @@
       padding-left: 0;
       padding-right: 0;
     }
+
+    .btn-join {
+      max-width: 270px;
+    }
   }
 </style>
 
-<div class="frame-size">
+<div class="container-sm">
   <div class="container-how-work p-x-16">
     <div class="container">
       <div class="row">
@@ -402,7 +406,7 @@
           <h1 class="text-title mb-56">Cara Kerja Master Cuan</h1>
         </div>
         <p class="d-flex">
-          <span class="number mr-8">1</span> Tanggal promo: 24 Januari 2022 - 13 Februari 2022
+          <span class="number mr-8">1</span> Tanggal promo: 27 Januari 2022 - 13 Februari 2022
         </p>
         <p class="d-flex">
           <span class="number mr-8">2</span> Berlaku untuk semua pengguna LandX
@@ -427,7 +431,7 @@
       <div class="container-reward">
         <div class="row">
           <div class="col-12">
-            <h1 class="text-title text-center">Master Cuan Reward</h1>
+            <h1 class="text-title text-center mb-24">Master Cuan Reward</h1>
           </div>
         </div>
 
@@ -435,25 +439,25 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div className="container-icon mx-auto"
+              <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
                 <img src="{{ url_for('static', filename='images/master_cuan/20-lot.png') }}" alt="icon" />
               </div>
             </div>
             <div class="swiper-slide">
-              <div className="container-icon mx-auto"
+              <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
                 <img src="{{ url_for('static', filename='images/master_cuan/50-lot.png') }}" alt="icon" />
               </div>
             </div>
             <div class="swiper-slide">
-              <div className="container-icon mx-auto"
+              <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
                 <img src="{{ url_for('static', filename='images/master_cuan/100-lot.png') }}" alt="icon" />
               </div>
             </div>
             <div class="swiper-slide">
-              <div className="container-icon mx-auto"
+              <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
                 <img src="{{ url_for('static', filename='images/master_cuan/250-lot.png') }}" alt="icon" />
               </div>
@@ -536,24 +540,18 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body text-content-acc">
                   <p class="d-flex">
-                    <span class="number-acc mr-8">1</span> Pembelian minimal 20 lot akan mendapatkan Mini Finance
-                    Bootcamp
-                    with the expert (2 webinar in 2 months - January & February), berlaku untuk 1000 orang
+                    <span class="number-acc mr-8">1</span> Beli min. 20 lot: Dapatkan Mini Finance Bootcamp with Experts
                   </p>
                   <p class="d-flex">
-                    <span class="number-acc mr-8">2</span> Pembelian minimal 50 lot akan mendapatkan Finance bootcamp
-                    with
-                    the expert (4 webinar in 3 months February - April) berlaku untuk 1000 orang
+                    <span class="number-acc mr-8">2</span> Beli min. 50 lot: Dapatkan EXCLUSIVE Mini Finance Bootcamp
+                    with Experts
                   </p>
                   <p class="d-flex">
-                    <span class="number-acc mr-8">3</span> Pembelian minimal 100 lot -> akan mendapatkan Offline
-                    bootcamp
-                    finance with the expert + happy hour meetup di satu tempat, berlaku untuk 100 orang (batch system
-                    - per batch ada 20 orang)
+                    <span class="number-acc mr-8">3</span> Beli min. 100 lot: Dapatkan Offline Finance Bootcamp with
+                    Experts Happy Hour Meetup & Discussion with Speakers
                   <p class="d-flex">
-                    <span class="number-acc mr-8">4</span> Pembelian minimal 250 lot akan mendapatkan Offline bootcamp
-                    finance with the expert + F&B and Business tour, berlaku untuk 100 orang (batch system - per batch
-                    ada 20 orang)
+                    <span class="number-acc mr-8">4</span> Beli min. 250 lot: Dapatkan Offline Bootcamp Finance with
+                    Experts Business tour
                   </p>
                 </div>
               </div>
@@ -656,75 +654,88 @@
   </div>
 
   <!-- Footer TODO: move to layout -->
-  <footer style="background-color: #fff;">
-    <div class="footer-cuan">
-      <div class="menu-link pt-4">
-        <div class="col-md-12 mb-2">
-          <a href="">Mengapa LandX</a>
+  <footer>
+    <div class="container-sm px-0" style="background-color: #fff;">
+      <div class="footer-cuan">
+        <div class="menu-link pt-4">
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#why-landx">Mengapa LandX</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#ongoing-projects">Proyek</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/#how-it-works">Cara Kerja</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/contact">Kontak</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/">Blog</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="">Perusahaan</a>
+          </div>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Proyek</a>
+        <div class="menu-link2">
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/jobs-at-landx/">Karir</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/syarat-dan-ketentuan">Syarat & Ketentuan</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/privacy-policy">Kebijakan Privasi</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/service-level-agreement">Service Level Agreement</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/kebijakan-isms">Kebijakan ISMS</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/mitigasi-risiko">Mitigasi Resiko</a>
+          </div>
+          <div class="col-md-12 mb-2">
+            <a href="https://landx.id/blog/faq-landx/">FAQ</a>
+          </div>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="/cara-kerja">Cara Kerja</a>
+        <div class="mt-4">
+          <a href="https://www.facebook.com/landx.id" class="text-decoration-none">
+            <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
+          </a>
+          <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company"
+            class="text-decoration-none">
+            <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
+          </a>
+          <a href="https://www.instagram.com/landx.id/" class="text-decoration-none">
+            <img style="padding-right: 15px;"
+              src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Blog</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Perusahaan</a>
+        <div class="mt-4">
+          <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
         </div>
       </div>
-      <div class="menu-link2">
-        <div class="col-md-12 mb-2">
-          <a href="">Karir</a>
+      <div class="row text-center pt-3 pb-3 footer-menu">
+        <div class="col-4 col-md-4">
+          <a href="/home">
+            <img src="{{ url_for('static', filename='images/master_cuan/home.png') }}">
+            <p>Home</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Syarat & Ketentuan</a>
+        <div class="col-4 col-md-4">
+          <a href="/cara-kerja">
+            <img src="{{ url_for('static', filename='images/master_cuan/insight-active.png') }}">
+            <p class="footer-menu-active">Cara Kerja</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Kebijakan Privasi</a>
+        <div class="col-4 col-md-4">
+          <a href="/profile">
+            <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
+            <p>Profile</p>
+          </a>
         </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Service Level Agreement</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Kebijakan ISMS</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">Mitigasi Resiko</a>
-        </div>
-        <div class="col-md-12 mb-2">
-          <a href="">FAQ</a>
-        </div>
-      </div>
-      <div class="mt-4">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/facebook.svg') }}">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/linkedin.svg') }}">
-        <img style="padding-right: 15px;" src="{{ url_for('static', filename='images/master_cuan/instagram.svg') }}">
-      </div>
-      <div class="mt-4">
-        <p class="footer-sign">© 2020 LandX Indonesia. All Rights Reserved.</p>
-      </div>
-    </div>
-    <div class="row text-center pt-3 pb-3 footer-menu">
-      <div class="col-4 col-md-4">
-        <a href="/home">
-          <img src="{{ url_for('static', filename='images/master_cuan/home_active.png') }}">
-          <p class="footer-menu-active">Home</p>
-        </a>
-      </div>
-      <div class="col-4 col-md-4">
-        <a href="/cara-kerja">
-          <img src="{{ url_for('static', filename='images/master_cuan/insight.png') }}">
-          <p>Cara Kerja</p>
-        </a>
-      </div>
-      <div class="col-4 col-md-4">
-        <a href="/profile">
-          <img src="{{ url_for('static', filename='images/master_cuan/user.png') }}">
-          <p>Profile</p>
-        </a>
       </div>
     </div>
   </footer>
@@ -776,6 +787,16 @@
     }
     if (indexSwiper >= 3) {
       reward4.classList.add("reward-active")
+    }
+
+    if (indexSwiper < 1) {
+      reward2.classList.remove("reward-active")
+    }
+    if (indexSwiper < 2) {
+      reward3.classList.remove("reward-active")
+    }
+    if (indexSwiper < 3) {
+      reward4.classList.remove("reward-active")
     }
   });
 
