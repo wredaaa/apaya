@@ -96,24 +96,26 @@
           </div>
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-cta">Install Sekarang</button>
+          <a class="btn btn-cta btn-install-home">
+            Install Sekarang
+          </a>
         </div>
       </div>
 
       <p class="text-cs">Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</p>
       <div class="d-grid gap-2">
-        <button type="button" class="btn btn-cs">
+        <a href="https://wa.link/wwcvhi" class="mx-auto btn btn-cs w-100">
           <span>
             <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
           </span>
           WA Customer Service 1
-        </button>
-        <button type="button" class="btn btn-cs">
+        </a>
+        <a href="https://wa.link/fho9yk" class="mx-auto btn btn-cs w-100">
           <span>
             <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
           </span>
           WA Customer Service 2
-        </button>
+        </a>
       </div>
     </section>
   </div>
@@ -205,5 +207,20 @@
     </div>
   </div>
 </div>
+
+<script>
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const btnInstall = document.querySelector('.btn-install-home');
+  if (/windows phone/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/android/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    btnInstall.href = 'https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id';
+  } else {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  }
+
+</script>
 
 {% endblock content %}

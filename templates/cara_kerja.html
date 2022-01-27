@@ -360,7 +360,7 @@
           <div class="container-banner-img">
             <img src="{{ url_for('static', filename='images/master_cuan/logo_landx.webp') }}" class='img-center mt-32'
               alt="logo" />
-            <img src="{{ url_for('static', filename='images/master_cuan/banner_master_cuan.webp') }}" alt="logo"
+            <img src="{{ url_for('static', filename='images/master_cuan/logo-master-cuan-1.webp') }}" alt="logo"
               class='img-center mb-24 img-fluid' />
           </div>
         </div>
@@ -441,25 +441,25 @@
             <div class="swiper-slide">
               <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
-                <img src="{{ url_for('static', filename='images/master_cuan/20-lot.png') }}" alt="icon" />
+                &#128536;
               </div>
             </div>
             <div class="swiper-slide">
               <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
-                <img src="{{ url_for('static', filename='images/master_cuan/50-lot.png') }}" alt="icon" />
+                &#128525;
               </div>
             </div>
             <div class="swiper-slide">
               <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
-                <img src="{{ url_for('static', filename='images/master_cuan/100-lot.png') }}" alt="icon" />
+                &#128526;
               </div>
             </div>
             <div class="swiper-slide">
               <div class="container-icon mx-auto"
                 style="width: 56px; height: 56px; background: #E4F6E8;display: flex;align-items: center;justify-content: center; font-size: 30px;border-radius: 8px; margin-left: auto; margin-right: auto;">
-                <img src="{{ url_for('static', filename='images/master_cuan/250-lot.png') }}" alt="icon" />
+                &#129297;
               </div>
             </div>
           </div>
@@ -624,9 +624,9 @@
             </div>
             <div class="row">
               <div class="col-12 text-center">
-                <button class="btn-download-white">
+                <a class="btn btn-download-white btn-install-home">
                   Install Sekarang
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -638,15 +638,17 @@
           <h4 class='text-help mb-16'>Untuk bantuan lebih lanjut, hubungi kami via WhatsApp</h4>
         </div>
         <div class="col-12 text-center">
-          <a href="https://wa.link/wwcvhi">
-            <button class="btn-outline-help mb-16">
-              WA Customer Service 1
-            </button>
+          <a href="https://wa.link/wwcvhi" class="mx-auto btn btn-cs w-100 mb-16">
+            <span>
+              <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+            </span>
+            WA Customer Service 1
           </a>
-          <a href="https://wa.link/fho9yk">
-            <button class="btn-outline-help">
-              WA Customer Service 2
-            </button>
+          <a href="https://wa.link/fho9yk" class="mx-auto btn btn-cs w-100">
+            <span>
+              <img class="icon-wa" src="{{ url_for('static', filename='images/master_cuan/whatsapp.svg') }}">
+            </span>
+            WA Customer Service 2
           </a>
         </div>
       </div>
@@ -800,6 +802,20 @@
     }
   });
 
+
+</script>
+<script>
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const btnInstall = document.querySelector('.btn-install-home');
+  if (/windows phone/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/android/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    btnInstall.href = 'https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id';
+  } else {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  }
 
 </script>
 {% endblock content %}
