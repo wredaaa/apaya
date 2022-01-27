@@ -1,111 +1,126 @@
 {% extends "layout.html" %}
 {% block content %}
-  <style>
-    .title-login {
-      color: #222222;
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
+<style>
+  .title-login {
+    color: #222222;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
 
-    .desc-login {
-      font-size: 14px;
-      color: #425766;
-      margin-bottom: 40px;
-    }
+  .desc-login {
+    font-size: 14px;
+    color: #425766;
+    margin-bottom: 40px;
+  }
 
-    .label-input {
-      font-size: 14px;
-      font-weight: 700;
-    }
+  .label-input {
+    font-size: 14px;
+    font-weight: 700;
+  }
 
-    ::placeholder {
-      font-size: 14px;
-      color: #9E9E9E;
-    }
+  ::placeholder {
+    font-size: 14px;
+    color: #9E9E9E;
+  }
 
-    .field-icon {
-      float: right;
-      margin-right: 5px;
-      margin-top: -29px;
-      position: relative;
-      z-index: 2;
-      font-size: 21px;
-    }
+  .field-icon {
+    float: right;
+    margin-right: 5px;
+    margin-top: -29px;
+    position: relative;
+    z-index: 2;
+    font-size: 21px;
+  }
 
-    .lupa-password {
-      font-size: 14px;
-      color: #00912D;
-      float: right;
-    }
+  .lupa-password {
+    font-size: 14px;
+    color: #00912D;
+    float: right;
+  }
 
-    .card-btn-signin {
-      margin-top: 300px;
-      text-align: center;
-      display: grid;
-    }
+  .card-btn-signin {
+    margin-top: 300px;
+    text-align: center;
+    display: grid;
+  }
 
-    .btn-signin {
-      background: #2DBE60;
-      box-shadow: 0px 6px 6px rgb(213 213 213 / 40%);
-      border-radius: 8px;
-      color: #fff;
-    }
+  .btn-signin {
+    background: #2DBE60;
+    box-shadow: 0px 6px 6px rgb(213 213 213 / 40%);
+    border-radius: 8px;
+    color: #fff;
+  }
 
-    .btn-signin:hover {
-      color: #fff !important;
-    }
+  .btn-signin:hover {
+    color: #fff !important;
+  }
 
-    .btn-new {
-      color: #2DBE60;
-      margin-top: 15px;
-      font-size: 17px;
-    }
+  .btn-new {
+    color: #2DBE60;
+    margin-top: 15px;
+    font-size: 17px;
+  }
 
-    .btn-new:hover  {
-      color: #2DBE60 !important;
-    }
+  .btn-new:hover {
+    color: #2DBE60 !important;
+  }
+</style>
 
-  </style>
-
-  <div class="frame-size">
-    <div class="banner-profile pb-1">
-      <div class="row box-space" style="margin-bottom: 15px;">
-        <div class="col-1 col-md-1 menu-back" style="text-align-last: right; padding-left: 0;">
-          <img width="8" src="{{ url_for('static', filename='images/master_cuan/chevron_left.png') }}">
-        </div>
-        <div class="col-6 col-md-6 menu-back" style="padding-left: 0px;">
-          <p style="margin-top: 2px;">Login</p>
-        </div>
+<div class="frame-size">
+  <div class="banner-profile pb-1">
+    <div class="row box-space" style="margin-bottom: 15px;">
+      <div class="col-1 col-md-1 menu-back" style="text-align-last: right; padding-left: 0;">
+        <img width="8" src="{{ url_for('static', filename='images/master_cuan/chevron_left.png') }}">
+      </div>
+      <div class="col-6 col-md-6 menu-back" style="padding-left: 0px;">
+        <p style="margin-top: 2px;">Login</p>
       </div>
     </div>
-    <div class="banner-body">
-      <!-- Form Login -->
-      <section> 
-        <div class="mt-6">
-          <p class="title-login">Login dengan akun LandX</p>
-          <p class="desc-login">
-            Kamu bisa login menggunakan akun yang telah kamu daftarkan melalui aplikasi LandX
-          </p>    
-          <div class="">
-            <div class="mb-3">
-              <label for="email" class="form-label label-input">Email</label>
-              <input type="email" class="form-control form-login" id="email" name="email" placeholder="Masukkan email Anda">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label label-input">Kata Sandi</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi Anda">
-              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-            </div>
-          </div>
-          <p class="lupa-password">Lupa Kata Sandi?</p>
-        </div>
-        <div class="col-12 col-md-12 card-btn-signin">
-          <a href="/home" class="btn btn-signin">Masuk Sekarang</a>
-          <button class="btn btn-new">Daftar Akun Baru</button>
-        </div>
-      </section>
-    </div>
   </div>
+  <div class="banner-body">
+    <!-- Form Login -->
+    <section>
+      <div class="mt-6">
+        <p class="title-login">Login dengan akun LandX</p>
+        <p class="desc-login">
+          Kamu bisa login menggunakan akun yang telah kamu daftarkan melalui aplikasi LandX
+        </p>
+        <div class="">
+          <div class="mb-3">
+            <label for="email" class="form-label label-input">Email</label>
+            <input type="email" class="form-control form-login" id="email" name="email"
+              placeholder="Masukkan email Anda">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label label-input">Kata Sandi</label>
+            <input type="password" class="form-control" id="password" name="password"
+              placeholder="Masukkan kata sandi Anda">
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+          </div>
+        </div>
+        <p class="lupa-password">Lupa Kata Sandi?</p>
+      </div>
+      <div class="col-12 col-md-12 card-btn-signin">
+        <a href="/home" class="btn btn-signin">Masuk Sekarang</a>
+        <a class="btn btn-new btn-new-acun">Daftar Akun Baru</a>
+      </div>
+    </section>
+  </div>
+</div>
 
+<script>
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const btnInstall = document.querySelector('.btn-new-acun');
+  if (/windows phone/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/android/i.test(userAgent)) {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    btnInstall.href = 'https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id';
+  } else {
+    btnInstall.href = 'https://play.google.com/store/apps/details?id=store.numoney.landxapp';
+  }
+
+</script>
 {% endblock content %}
